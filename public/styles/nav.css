@@ -1,5 +1,6 @@
 .logo {
   font-family: 'Bungee', cursive;
+  font-size: 40px;
 }
 
 nav {
@@ -11,4 +12,16 @@ nav {
   color: #FFFF;
   z-index: 999;
   top: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toggle-btn {
+  font-size: 20px; 
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.toggle-btn:hover {
+  cursor: pointer;
 }

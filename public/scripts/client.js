@@ -40,6 +40,19 @@ const renderTweets = (tweets) => {
   }
 }
 
+// const sliderHeader = () => {
+//   $('.new-tweet').hide();
+//   $(document).ready(() => {
+//       $('.fa-angle-double-down').click(() => {
+//         $('.new-tweet').slideToggle();
+//         if ($('.new-tweet').is(':visible')){
+//           $('#tweet-area').focus();
+//         }
+//       })
+//   });
+// };
+
+
 $(document).ready(() => {
 
   const loadTweets = () => {
@@ -80,4 +93,12 @@ $(document).ready(() => {
       }
     })
   });
+
+  $(".toggle-btn").click(() => {
+    $(".new-tweet").slideToggle("slow");
+    $(".new-tweet textarea").focus();
+  });
+  
+  //The new tweet area is hidden until called upon
+  $(".new-tweet").hide();
 })
