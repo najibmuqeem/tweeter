@@ -1,6 +1,7 @@
 $(document).ready(() => {
   const max = 140;
   $("#tweet-area").keyup(() => {
+    $(".error").text('');q
     const count = $(`#tweet-area`).val().length;
     const remaining = max - count;
     $("#counter").text(remaining);

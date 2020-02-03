@@ -40,19 +40,6 @@ const renderTweets = (tweets) => {
   }
 }
 
-// const sliderHeader = () => {
-//   $('.new-tweet').hide();
-//   $(document).ready(() => {
-//       $('.fa-angle-double-down').click(() => {
-//         $('.new-tweet').slideToggle();
-//         if ($('.new-tweet').is(':visible')){
-//           $('#tweet-area').focus();
-//         }
-//       })
-//   });
-// };
-
-
 $(document).ready(() => {
 
   const loadTweets = () => {
@@ -71,10 +58,10 @@ $(document).ready(() => {
     event.preventDefault();
 
     if ($text.val().length > 140) {
-      console.log("too long");
+      $(".error").text("The tweet must be under the character count!");
       return
     } else if (!$text.val()) {
-      console.log("it's empty");
+      $(".error").text("Comon, saay sumpin!");
       return
     }
 
