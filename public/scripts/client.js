@@ -40,14 +40,15 @@ const renderTweets = (tweets) => {
   }
 }
 
+const loadTweets = () => {
+  $.ajax('/tweets', { method: 'GET', dataType: "json" })
+  .then(function (result) {
+    renderTweets(result);
+  });
+}
+
 $(document).ready(() => {
 
-  const loadTweets = () => {
-    $.ajax('/tweets', { method: 'GET', dataType: "json" })
-    .then(function (result) {
-      renderTweets(result);
-    });
-  }
   loadTweets();
 
   const $form = $('#new-tweet-form');
@@ -70,7 +71,6 @@ $(document).ready(() => {
       method: 'POST',
       data: $form.serialize(),
       success:() => {
-        console.log("this was successful")
         loadTweets();
         $('#counter').text(140);
         $('#tweet-area').val('').focus();
@@ -85,7 +85,6 @@ $(document).ready(() => {
     $(".new-tweet").slideToggle("slow");
     $(".new-tweet textarea").focus();
   });
-  
   //The new tweet area is hidden until called upon
   $(".new-tweet").hide();
 })
