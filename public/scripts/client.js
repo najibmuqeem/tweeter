@@ -1,4 +1,11 @@
 
+
+const escape = (str) => {
+  const div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
 const createTweetElement = (tweetData) => {
   const { name, avatar, handle } = tweetData.user;
   const { text } = tweetData.content;
@@ -12,10 +19,10 @@ const createTweetElement = (tweetData) => {
               <span class="tweet-handle">${handle}</span>
             </header>
             <section>
-              <span class="tweet-text">${text}</span>
+              <span class="tweet-text">${escape(text)}</span>
             </section>
             <footer>
-              <span>${dateCreated}</span>
+              <span>${(dateCreated)}</span>
               <div class="tweet-icons">
                 <i class="fas fa-flag"></i>
                 <i class="fas fa-retweet"></i>
