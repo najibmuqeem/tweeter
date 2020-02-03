@@ -1,0 +1,14 @@
+.logo {
+  font-family: 'Bungee', cursive;
+}
+
+nav {
+  height: 120px;
+  position: fixed;
+  width: 100%;
+  padding: 1.5em;
+  background-color: #4056A1;
+  color: #FFFF;
+  z-index: 999;
+  top: 0px;
+}
