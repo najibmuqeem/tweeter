@@ -10,11 +10,12 @@
     type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:400,400i,700,700i&display=swap"
     rel="stylesheet">
+
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -28,17 +29,27 @@
     <span class=logo>tweeter</span>
   </nav>
 
+  <!-- Header -->
+  <header class="user-profile">
+    <div>
+      <img src="/images/profile-hex.png">
+    </div>
+    <br>
+    <div>
+      <h2>Your Name</h2>
+    </div>
+  </header>
+
   <!-- Page-specific (main) content here -->
   <main class="container">
-    <header class="user-profile">
-      <div>
-        <img src="/images/profile-hex.png">
-      </div>
-      <br>
-      <div>
-        <h2>Your Name</h2>
-      </div>
-    </header>
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form action="/tweets" method="POST">
+        <textarea name="text" placeholder="What are you humming about?"></textarea>
+        <input class="btn" type="submit" value="Tweet">
+        <span class="counter">140</span>
+      </form>
+    </section>
   </main>
 </body>
 
