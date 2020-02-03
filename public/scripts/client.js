@@ -1,30 +1,4 @@
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatar": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatar": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
-
-
 const createTweetElement = (tweetData) => {
   const { name, avatar, handle } = tweetData.user;
   const { text } = tweetData.content;
@@ -32,7 +6,7 @@ const createTweetElement = (tweetData) => {
   return `<article class="tweet">
             <header>
               <div>
-                <img src=${avatar} />
+                <img src="${avatar}" />
                 <span>${name}</span>
               </div>
               <span class="tweet-handle">${handle}</span>
@@ -59,9 +33,8 @@ const renderTweets = (tweets) => {
   }
 }
 
-//have a look for css class conventions: https://web.compass.lighthouselabs.ca/days/w04d2/activities/324
-
 $(document).ready(() => {
+
   const loadTweets = () => {
     $.ajax('/tweets', { method: 'GET', dataType: "json" })
     .then(function (result) {
@@ -69,4 +42,35 @@ $(document).ready(() => {
     });
   }
   loadTweets();
+
+  const $form = $('#new-tweet-form');
+  const $text = $('#tweet-area');
+
+  $form.submit((event) => {
+
+    event.preventDefault();
+
+    if ($text.val().length > 140) {
+      console.log("too long");
+      return
+    } else if (!$text.val()) {
+      console.log("it's empty");
+      return
+    }
+
+    $.ajax({
+      url: '/tweets', 
+      method: 'POST',
+      data: $form.serialize(),
+      success:() => {
+        console.log("this was successful")
+        loadTweets();
+        $('#counter').text(140);
+        $('#tweet-area').val('').focus();
+      },
+      error: (error) => {
+        console.log(error);
+      }
+    })
+  });
 })
