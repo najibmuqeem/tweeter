@@ -1,3 +1,4 @@
+
 const data = [
   {
     "user": {
@@ -60,8 +61,12 @@ const renderTweets = (tweets) => {
 
 //have a look for css class conventions: https://web.compass.lighthouselabs.ca/days/w04d2/activities/324
 
-
-
 $(document).ready(() => {
-  renderTweets(data);
+  const loadTweets = () => {
+    $.ajax('/tweets', { method: 'GET', dataType: "json" })
+    .then(function (result) {
+      renderTweets(result);
+    });
+  }
+  loadTweets();
 })
