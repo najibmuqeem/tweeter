@@ -1,67 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Meta Information -->
+    <title>Tweeter - Home Page</title>
 
-<head>
-  <!-- Meta Information -->
-  <title>Tweeter - Home Page</title>
+    <!-- External CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      type="text/css"
+    />
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-    type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:400,400i,700,700i&display=swap"
-    rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,600,600i&display=swap"
+      rel="stylesheet"
+    />
 
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
-  <!-- App CSS -->
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
+    <!-- External JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <!-- External JS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script
+      type="text/javascript"
+      src="/scripts/composer-char-counter.js"
+    ></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
 
-  <!-- App JS -->
-  <script type="text/javascript" src="/scripts/client.js"></script>
-  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <body>
+    <!-- Top nav bar (fixed) -->
+    <nav>
+      <span class="logo">tweeter</span>
+      <span class="toggle-btn">
+        <b>Write </b>a new tweet <i class="fas fa-angle-double-down"></i>
+      </span>
+    </nav>
 
-</head>
+    <!-- Header -->
+    <header class="user-profile">
+      <div>
+        <img src="/images/profile-hex.png" />
+      </div>
+      <br />
+      <div>
+        <h2>Your Name</h2>
+      </div>
+    </header>
 
-<body>
-  <!-- Top nav bar (fixed) -->
-  <nav>
-    <span class=logo>tweeter</span>
-    <span class="toggle-btn">
-      <b>Write </b>a new tweet <i class="fas fa-angle-double-down"></i>
-    </span>
-  </nav>
-
-  <!-- Header -->
-  <header class="user-profile">
-    <div>
-      <img src="/images/profile-hex.png">
-    </div>
-    <br>
-    <div>
-      <h2>Your Name</h2>
-    </div>
-  </header>
-
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <section class="new-tweet">
-      <h2>Compose Tweet</h2>
-      <form id="new-tweet-form" action="/tweets" method="POST">
-        <textarea id="tweet-area" name="text" placeholder="What are you humming about?"></textarea>
-        <input class="btn" type="submit" value="Tweet">
-        <span class="error"></span>
-        <span id="counter">140</span>
-      </form>
-    </section>
-    <section id="tweets-container"></section>
-  </main>
-</body>
-
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form id="new-tweet-form" action="/tweets" method="POST">
+          <textarea
+            id="tweet-area"
+            name="text"
+            placeholder="What are you humming about?"
+          ></textarea>
+          <input class="btn" type="submit" value="Tweet" />
+          <span class="error"></span>
+          <span id="counter">140</span>
+        </form>
+      </section>
+      <section id="tweets-container"></section>
+    </main>
+  </body>
 </html>
