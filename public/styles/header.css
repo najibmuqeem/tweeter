@@ -1,10 +1,38 @@
-.user-profile {
-  width: 100%;
-  height: 400px;
-  align-items: center;
-  flex-direction: column;
+img {
+  height: 300px;
+  width: 300px;
+  border-radius: 40%;
+}
+
+#image {
   display: flex;
-  justify-content: space-evenly;
-  background-image: url(/images/brick-wall-dark.png);
-  margin-top: 200px;
+  justify-content: center;
+  margin-top: 3%;
+}
+
+@media only screen and (max-width: 1024px) {
+  #me {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 101px 0 0 0;
+    background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #me {
+    height: 60%;
+    width: 40%;
+    position: fixed;
+    float: left;
+    margin: 115px 0 0 5%;
+    background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+  }
+
+  #image {
+    margin: none;
+  }
 }

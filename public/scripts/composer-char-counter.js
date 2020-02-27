@@ -1,14 +1,14 @@
-$(document).ready(() => {
-  const max = 140;
-  $("#tweet-area").keyup(() => {
-    $(".error").text('');q
-    const count = $(`#tweet-area`).val().length;
-    const remaining = max - count;
-    $("#counter").text(remaining);
-    if (remaining > 0) {
-      $("#counter").css("color", "ED6A5A");
-    } else {
-      $("#counter").css("color", "red");
-    }
-  });
-})
+$(document).ready(function() {
+  $("textarea").val("");
+});
+
+$(document).on("input", "textarea", function() {
+  let currentCount = $(this).val().length;
+  let counter = $(this).siblings(".counter");
+  counter.text(140 - currentCount);
+  if (currentCount > 140) {
+    counter.addClass("over");
+  } else {
+    counter.removeClass("over");
+  }
+});

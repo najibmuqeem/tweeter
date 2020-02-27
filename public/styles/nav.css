@@ -1,27 +1,44 @@
-.logo {
-  font-family: 'Bungee', cursive;
-  font-size: 40px;
-}
-
 nav {
-  height: 120px;
   position: fixed;
-  width: 100%;
-  padding: 1.5em;
-  background-color: #4056A1;
-  color: #FFFF;
-  z-index: 999;
   top: 0px;
+  height: 100px;
+  width: 100%;
+  z-index: 99999999;
+  background-color: #4056a1;
+  color: #ffffff;
+  padding: 1.1em;
+}
+
+#logo {
+  font-family: "Bungee";
+  font-size: 45px;
+}
+
+#write-a-new-tweet {
+  float: right;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+#write-tweet {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-around;
+  color: cyan;
+  border-radius: 50%;
+  animation: bounce 0.5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
 }
 
-.toggle-btn {
-  font-size: 20px; 
-  font-family: 'Source Sans Pro', sans-serif;
-}
-
-.toggle-btn:hover {
+#write-tweet:hover {
   cursor: pointer;
+  color: darkred;
 }

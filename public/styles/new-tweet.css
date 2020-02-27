@@ -1,26 +1,24 @@
-#tweet-area {
+h2 {
+  text-align: center;
+}
+
+textarea {
   width: 100%;
   background-color: inherit;
-  overflow: hidden;
   border: none;
-  border-bottom: 4px #545149 solid;
+  border-bottom: 4px solid #242135;
 }
 
-#counter {
+.counter {
+  font-family: "Bungee";
   float: right;
-  font-family: 'Bungee', cursive;
+  margin-top: 0.55%;
 }
 
-.btn {
-  font-family: 'Bungee', cursive;
-  background-color: #4056A1;
-  color: white;
-  font-size: 24px;
-  padding: 5px 10px;
-}
-
-.error {
-  color: red;
-  font-size: 19px;
-  margin-left: 10px;
+input {
+  font-family: "Bungee";
+  font-size: 25px;
+  color: #fefefe;
+  background-color: #4056a1;
+  padding: 6px 6px;
 }

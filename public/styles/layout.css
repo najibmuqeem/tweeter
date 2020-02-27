@@ -1,31 +1,132 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
+article {
+  position: relative;
+  height: 250px;
+  margin: 2% 0;
+  border: 3px solid #333333;
+}
 
 body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 24px;
   color: #545149;
   background-color: #f4f1ec;
-  font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
 }
 
-main {
-  width: 90%;
-  margin: 0 auto;
-  background-color: inherit;
+article:hover {
+  box-shadow: 10px 10px 10px #1111bf;
 }
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+
+.handle {
+  display: none;
+  float: right;
+}
+
+article:hover .handle {
+  display: inline;
+}
+
+footer {
+  width: 98%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  margin: 0 1% 1% 1%;
+  padding-top: 1%;
+  border-top: 3px solid #333333;
+}
+
+.actions {
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 1%;
+}
+
+#avatar {
+  height: 50px;
+  width: 50px;
+}
+
+.tweet-text {
+  margin: 10% 3%;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.over {
+  color: red;
+}
+
+.hovered {
+  box-shadow: 10px 10px 10px #1111bf;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.new-tweet {
+  display: none;
+}
+
+#to-top {
+  display: none;
+  height: 100px;
+  width: 100px;
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  z-index: 99999;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: #fefefe;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 50px;
+}
+
+.display-error {
+  display: none;
+  font-family: "Bungee";
+  font-size: 21px;
+}
+
+article header {
+  width: 98%;
+  flex-direction: row;
+  height: 31px;
+  justify-content: space-between;
+  margin: 1% 1% 3% 1%;
+}
+
+@media only screen and (max-width: 1024px) {
+  main {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  main {
+    width: 50%;
+    margin: 101px 1%;
+    float: right;
+  }
+}
