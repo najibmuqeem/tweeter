@@ -12,6 +12,8 @@ textarea {
 .counter {
   font-family: "Bungee";
   float: right;
+  position: relative;
+  top: 0;
   margin-top: 0.55%;
 }
 

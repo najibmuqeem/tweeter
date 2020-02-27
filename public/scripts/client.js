@@ -1,20 +1,43 @@
 $(document).ready(function() {
   loadTweets();
 
+  $(".display-error").addClass("hide");
+
   $(".new-tweet-form").on("submit", function(e) {
     e.preventDefault();
 
+    const errorMessagesOver = [
+      "TOO. MUCH. TEXT.",
+      "Ease up a little!",
+      "Tweet too long.",
+      "No one is THAT interested in what you have to say.",
+      "A picture's worth less words than what you just wrote.",
+      "Please, no more!!",
+      "Verbosity killed the bat.",
+      "You know the maximum character limit is 140, right?",
+      "There's a character counter RIGHT HERE ------------------------>"
+    ];
+    const errorMessagesNone = [
+      "What? I can't hear you.",
+      "Come on, say something!",
+      "Tweet too short.",
+      "Don't be shy!",
+      "Gimme SOMETHING, anything!",
+      "Not very verbose today, are we?",
+      "You know the minimum character limit is 1, right?",
+      "Say literally anything.",
+      "Even a space will work if you have nothing else to say."
+    ];
+
     if ($(".post-text").val().length > 140) {
       $(".display-error")
-        .text(
-          "You see that character count in the bottom right? You think it's there just for shits and giggles? Come the fuck on -->"
-        )
+        .text(errorMessagesOver[Math.floor(Math.random() * Math.floor(10))])
         .fadeIn();
 
       return;
     } else if (!$(".post-text").val()) {
       $(".display-error")
-        .text("Fuck off if you've got nothing to say.")
+        .text(errorMessagesNone[Math.floor(Math.random() * Math.floor(10))])
         .fadeIn();
 
       return;

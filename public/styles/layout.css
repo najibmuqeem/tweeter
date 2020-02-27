@@ -102,10 +102,15 @@ footer {
   font-size: 50px;
 }
 
+#to-top:hover {
+  color: darkred;
+}
+
 .display-error {
-  display: none;
+  display: inline-block;
   font-family: "Bungee";
-  font-size: 21px;
+  font-size: 19px;
+  width: 81%;
 }
 
 article header {
@@ -114,6 +119,11 @@ article header {
   height: 31px;
   justify-content: space-between;
   margin: 1% 1% 3% 1%;
+}
+
+i:hover {
+  cursor: pointer;
+  color: darkred;
 }
 
 @media only screen and (max-width: 1024px) {
