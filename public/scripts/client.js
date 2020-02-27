@@ -71,6 +71,8 @@ $(document).ready(function() {
     //clear previous values
     $(".display-error").text("");
     $(".post-text").val("");
+    $(".counter").text(140);
+    $(".counter").removeClass("over");
 
     //show/hide the new tweet form depending on its current state
     if ($(".new-tweet").hasClass("shown")) {
