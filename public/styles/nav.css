@@ -7,6 +7,7 @@ nav {
   background-color: #4056a1;
   color: #ffffff;
   padding: 1.1em;
+  transition: background-color 0.7s;
 }
 
 #logo {
@@ -42,4 +43,12 @@ nav {
 #write-tweet:hover {
   cursor: pointer;
   color: darkred;
+}
+
+@media only screen and (max-width: 1024px) {
+  nav {
+    transition: background-color 0.7s;
+    background-color: #03002e;
+    background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+  }
 }

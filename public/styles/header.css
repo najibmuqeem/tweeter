@@ -17,7 +17,8 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 101px 0 0 0;
+    margin: 100px 0 0 0;
+    background-color: #03002e;
     background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
   }
 }
@@ -29,6 +30,7 @@ img {
     position: fixed;
     float: left;
     margin: 115px 0 0 5%;
+    background-color: #03002e;
     background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
   }
 

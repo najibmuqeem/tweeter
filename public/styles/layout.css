@@ -87,8 +87,8 @@ footer {
 
 #to-top {
   display: none;
-  height: 100px;
-  width: 100px;
+  height: 90px;
+  width: 90px;
   position: fixed;
   bottom: 20px;
   right: 10px;
@@ -129,7 +129,7 @@ i:hover {
 @media only screen and (min-width: 1024px) {
   main {
     width: 50%;
-    margin: 101px 1%;
+    margin: 100px 1%;
     float: right;
   }
 }
