@@ -24,3 +24,16 @@ input {
   background-color: #4056a1;
   padding: 6px 6px;
 }
+
+#under-new-tweet {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.display-error {
+  margin: 1% 0 0 2%;
+  font-family: "Bungee";
+  font-size: 19px;
+  width: 81%;
+}

@@ -4,7 +4,9 @@ $(document).ready(function() {
 
 $(document).on("input", "textarea", function() {
   let currentCount = $(this).val().length;
-  let counter = $(this).siblings(".counter");
+  let counter = $(this)
+    .siblings("#under-new-tweet")
+    .children(".counter");
   counter.text(140 - currentCount);
   if (currentCount > 140) {
     counter.addClass("over");

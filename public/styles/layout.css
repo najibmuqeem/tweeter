@@ -106,13 +106,6 @@ footer {
   color: darkred;
 }
 
-.display-error {
-  display: inline-block;
-  font-family: "Bungee";
-  font-size: 19px;
-  width: 81%;
-}
-
 article header {
   width: 98%;
   flex-direction: row;

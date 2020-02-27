@@ -15,7 +15,7 @@ $(document).ready(function() {
       "Please, no more!!",
       "Verbosity killed the bat.",
       "You know the maximum character limit is 140, right?",
-      "There's a character counter RIGHT HERE ------------------------>"
+      "There's a character counter RIGHT HERE!"
     ];
     const errorMessagesNone = [
       "What? I can't hear you.",
