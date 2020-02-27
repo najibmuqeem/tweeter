@@ -1,11 +1,16 @@
+//code to run after document loads
 $(document).ready(function() {
+  //display currently stored tweets
   loadTweets();
 
+  //hide the invalid input display
   $(".display-error").addClass("hide");
 
+  //code to run on tweet submission
   $(".new-tweet-form").on("submit", function(e) {
     e.preventDefault();
 
+    //hardcoded error messages
     const errorMessagesOver = [
       "TOO. MUCH. TEXT.",
       "Ease up a little!",
@@ -29,6 +34,7 @@ $(document).ready(function() {
       "Even a space will work if you have nothing else to say."
     ];
 
+    //display relevant error if tweet text is nonexistent or above limit
     if ($(".post-text").val().length > 140) {
       $(".display-error")
         .text(errorMessagesOver[Math.floor(Math.random() * Math.floor(10))])
@@ -43,6 +49,7 @@ $(document).ready(function() {
       return;
     }
 
+    //make a post request for the tweet
     $.ajax({
       url: "/tweets",
       method: "POST",
@@ -59,9 +66,13 @@ $(document).ready(function() {
     });
   });
 
+  //code to run when the arrow below "write a new tweet" is clicked
   $("#write-tweet").on("click", function() {
+    //clear previous values
     $(".display-error").text("");
     $(".post-text").val("");
+
+    //show/hide the new tweet form depending on its current state
     if ($(".new-tweet").hasClass("shown")) {
       $(".new-tweet").removeClass("shown");
       $(".new-tweet").slideUp(400, () => {});
@@ -76,10 +87,14 @@ $(document).ready(function() {
     }
   });
 
+  //code to run on scroll
   $(document).scroll(function() {
+    //show/hide "write a new tweet" or the scroll-to-top button depending on whether or not the current scroll value is past the header
     if ($(window).scrollTop() > 400) {
       $("#to-top").fadeIn();
       $("#write-a-new-tweet").fadeOut();
+
+      //click event handler, only visible in this condition
       $("#to-top").on("click", function() {
         $(window).scrollTop(0);
       });
@@ -90,12 +105,14 @@ $(document).ready(function() {
   });
 });
 
+//function to make tweet text safe
 const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
+//creates a tweet article and populates it with relevant information
 const createTweetElement = function(tweet) {
   let $tweet = $("<article>").addClass("tweet");
   let html = `
@@ -115,6 +132,7 @@ const createTweetElement = function(tweet) {
   return $tweet;
 };
 
+//renders each tweet in storage in reverse order
 const renderTweets = function(tweets) {
   $("#tweets-container").empty();
   for (let tweet of tweets) {
@@ -122,12 +140,14 @@ const renderTweets = function(tweets) {
   }
 };
 
+//ajax get request to display the tweets
 const loadTweets = () => {
   $.ajax("/tweets", { method: "GET", dataType: "JSON" }).then(function(result) {
     renderTweets(result);
   });
 };
 
+//function to convert ms from 1970 to time in the past from today
 const msToOther = ms => {
   const diff = Date.now() - ms;
   if (diff < 1000) {
