@@ -41,7 +41,11 @@ $(document).ready(function() {
         .fadeIn();
 
       return;
-    } else if (!$(".post-text").val()) {
+    } else if (
+      !$(".post-text")
+        .val()
+        .trim()
+    ) {
       $(".display-error")
         .text(errorMessagesNone[Math.floor(Math.random() * Math.floor(10))])
         .fadeIn();
